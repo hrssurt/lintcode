@@ -1,19 +1,19 @@
-/****************************  TITLE  *****************************/
-/*112  Remove Duplicates from Sorted List.py*/
+"""***************************  TITLE  ****************************"""
+"""112  Remove Duplicates from Sorted List.py"""
 
 
 
-/****************************  DESCRIPTION  *****************************/
-/*
+"""***************************  DESCRIPTION  ****************************"""
+"""
 
 Given a sorted linked list, delete all duplicates such that each element appear only once.
 
-*/
+"""
 
 
 
-/****************************  EXAMPLES  *****************************/
-/*
+"""***************************  EXAMPLES  ****************************"""
+"""
 Example 1:
 	Input:  null
 	Output: null
@@ -29,11 +29,11 @@ Example 3:
 	
 
 
-*/
+"""
 
 
 
-/****************************  CODE  *****************************/
+"""***************************  CODE  ****************************"""
 """
 Definition of ListNode
 class ListNode(object):
@@ -59,9 +59,6 @@ class Solution:
             if left.val == right.val:
                 # skip
                 left.next = right.next
-                # does not need to move left, only move right
+                # does not need to move left, only move                     right
                 right = right.next
             else:
-                left, right = left.next, right.next
-                
-        return head

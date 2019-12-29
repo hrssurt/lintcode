@@ -1,17 +1,17 @@
-/****************************  TITLE  *****************************/
-/*106  Convert Sorted List to Binary Search Tree.py*/
+"""***************************  TITLE  ****************************"""
+"""106  Convert Sorted List to Binary Search Tree.py"""
 
 
 
-/****************************  DESCRIPTION  *****************************/
-/*
+"""***************************  DESCRIPTION  ****************************"""
+"""
 Given a singly linked list where elements are sorted in ascending order, convert it to a height balanced BST.
-*/
+"""
 
 
 
-/****************************  EXAMPLES  *****************************/
-/*
+"""***************************  EXAMPLES  ****************************"""
+"""
 Example 1:
 	Input: array = 1->2->3
 	Output:
@@ -31,11 +31,11 @@ Example 2:
 	Explanation:
 	There may be multi answers, and you could return any of them.
 
-*/
+"""
 
 
 
-/****************************  CODE  *****************************/
+"""***************************  CODE  ****************************"""
 """
 Definition of ListNode
 class ListNode(object):
