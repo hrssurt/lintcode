@@ -34,6 +34,7 @@ Example 3:
 
 
 """***************************  CODE  ****************************"""
+
 """
 Definition of ListNode
 class ListNode(object):
@@ -59,6 +60,9 @@ class Solution:
             if left.val == right.val:
                 # skip
                 left.next = right.next
-                # does not need to move left, only move                     right
+                # does not need to move left, only move right
                 right = right.next
             else:
+                left, right = left.next, right.next
+                
+        return head
