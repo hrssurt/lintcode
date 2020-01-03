@@ -40,19 +40,15 @@ class Solution:
     @return: Inorder in ArrayList which contains node values.
     """
     def inorderTraversal(self, root):
-        stack, result = [], []
-        while root:
-            stack.append(root)
-            root = root.left
-        
-        while stack:
-            top = stack.pop()
-            result.append(top.val)
-            if top.right:
-                top = top.right
-                while top:
-                    stack.append(top)
-                    top = top.left
+        cur, stack, result = root, [], []
+        while stack or cur:
+            if cur:
+                stack.append(cur)
+                cur = cur.left
+            else:
+                cur = stack.pop(-1)
+                result.append(cur.val)
+                cur = cur.right
         return result
                     
                 
