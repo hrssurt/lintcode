@@ -1,7 +1,11 @@
 class Stack(object):
 	"""Last in first out"""
-	def __init__(self):
-		self.stack = []
+	def __init__(self, stack=None):
+		# self.stack = stack
+		if stack:
+			self.stack = stack
+		else:
+			self.stack = []
 
 	def push(self, item):
 		self.stack.append(item)
@@ -11,6 +15,12 @@ class Stack(object):
 
 	def size(self):
 		return len(self.stack)
+
+	def peek(self):
+		if self.stack:
+			return self.stack[-1]
+		else:
+			return None
 		
 
 if __name__ == '__main__':
