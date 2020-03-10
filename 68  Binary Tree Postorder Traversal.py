@@ -26,31 +26,31 @@ Post order traversal
 
 
 """***************************  CODE  ****************************"""
+"""
+Definition of TreeNode:
+class TreeNode:
+    def __init__(self, val):
+        self.val = val
+        self.left, self.right = None, None
+"""
+
 class Solution:
+    """
+    @param root: A Tree
+    @return: Postorder in ArrayList which contains node values.
+    """
     def postorderTraversal(self, root):
-        cur_node, result, stack = root, [], []
-        while cur_node or stack:
-            while cur_node:
-                stack.append(cur_node)
-                if cur_node.left:
-                    cur_node = cur_node.left
-                elif cur_node.right:
-                    cur_node = cur_node.right
-                else:
-                    break
-            
-            cur_node = stack.pop(-1)
-            result.append(cur_node.val)
-            
-            # check if cur_node is the left child of previous node
-            # that means the left subtree of stack[-1] has been explored
-            # so we need to start explore the right subtree of stack[-1]
-            if stack and stack[-1].left is cur_node:
-                cur_node = stack[-1].right
-            else:
-                cur_node = None    # so that the previous loop will break
-                
-        return result
-            
-            
-        
+        if not root:
+            return []
+        stack, res = [root], []
+        while stack:
+            top = stack.pop(-1)
+            res.append(top.val)
+            if top.left:
+                stack.append(top.left)
+            if top.right:
+                stack.append(top.right)
+    
+        return res[::-1]
+
+

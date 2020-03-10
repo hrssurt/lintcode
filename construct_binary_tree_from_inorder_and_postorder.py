@@ -25,17 +25,52 @@ class Solution:
 def inorder_traversal(root):
     if not root:
         return []
-    stack = [root]
-    while stack:
-        root = stack.pop(-1)
-        while root.left:
-            stack.append(root)
-            root = root.left
+    stack, res = [], []
+    while root:
+        stack.append(root)
+        root = root.left
 
-        
+    while stack:
+        head = stack.pop(-1)
+        res.append(head.val)
+        if head.right:
+            head = head.right
+            while head:
+                stack.append(head)
+                head = head.left
+    return res
+
+
+
+def preorder_traversal(root):
+    if not root:
+        return []
+
+    stack, res = [root], []
+    while stack:
+        top = stack.pop(-1)
+        res.append(top.val)
+        if top.right:
+            stack.append(top.right)
+        if top.left:
+            stack.append(top.left)
+    return res
+
 
 def postorder_traversal(root):
-    pass
+    if not root:
+        return []
+    stack, res = [root], []
+    while stack:
+        top = stack.pop(-1)
+        res.append(top.val)
+        if top.left:
+            stack.append(top.left)
+        if top.right:
+            stack.append(top.right)
+
+    return res[::-1]
+
 
 
 
